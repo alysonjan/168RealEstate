@@ -1,52 +1,32 @@
 <?php
 include('./includes/header.php');
 
-require("PHPMailer/src/PHPMailer.php");
-require("PHPMailer/src/SMTP.php");
 
- if(isset($_POST['send'])){
+if(isset($_POST['send'])){
 
-$mailTo = "almi.urriza@swu.edu.ph"; //admin email
+$emailTo = "almi.urriza@swu.edu.ph"; //admin email
 
-$body = "<strong>Mobile Number :</strong> ".$_POST['mobilenumber'].'<br>'.
-        "<strong>Prefer time :</strong>".$_POST['prefertime'].'<br>'.
-        "<strong>Location :</strong>".$_POST['location'].'<br>'.
-        "<strong>Message:</strong>".$_POST['message'];
+$mailFrom = '168LandRealty Website Email Notification From: '.$_POST['email'];  //email from sender
 
-$msg = "Your message has been sent. Thank you!";
+$body = "FULLNAME: ".$_POST['fullname']."   ".
+        "PREFERTIME: ".$_POST['prefertime']. "   " .
+        "LOCATION: ".$_POST['location']. "   " .
+        "MOBILENUMBER: ".$_POST['mobilenumber']. "   ".
+        "MESSAGE: ".$_POST['message'];
 
-$mail  = new PHPMailer\PHPMailer\PHPMailer();
-// $mail->SMTPDebug = 3;
-$mail->isSMTP();
-$mail->Host= "mail.smtp2go.com";
-$mail->SMTPAuth = true;
-$mail->Username = "cite_admin";
-$mail->Password = "adm1npass";
-$mail->SMTPSecure = "tls";
-$mail->Port = "2525";
 
-$mail->From = $_POST['email'];  //email from sender
-$mail->FromName = $_POST['fullname']; //sender name
-
-$mail->addAddress($mailTo, "168LandRealityBrokerage");
-
-$mail->isHTML(true);
-$mail->Subject = "From 168LandRealty Website Email Notification";
-$mail->Body =$body;
-
-$mail->AltBody = "This is the plain text version of the email content";
-  
-if(!$mail->send()){
-  echo "Mailer Error: ".$mail->ErrorInfo;
-}else{
-  echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-  
-}
+   if(mail($emailTo,$mailFrom,$body)){
+     echo '<div class="container alert alert-success text-center">
+            Your message has been sent. Thank you!</div>';
+    }else{
+      echo '<div class="container alert alert-danger text-center">
+            Your message couldn\'t be sent, please try again later</div>';
+    }
 
  }
 
 ?>
-<!--##############################################################################--->
+
 <!---------NAVBAR----------------------->
 <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
