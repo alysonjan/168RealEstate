@@ -142,14 +142,14 @@ $body = "FULLNAME: ".$_POST['fullname']."   ".
                   </div>
                   <div class="icon-box-content table-cell">
                     <div class="icon-box-title">
-                      <h4 class="icon-title">Say Hello</h4>
+                    <h4 class="icon-title">Reach Us</h4>
                     </div>
                     <div class="icon-box-content">
                       <p class="mb-1">Email.
-                        <span class="color-a">contact@example.com</span>
+                        <span class="color-a">ajax@gmail.com</span>
                       </p>
                       <p class="mb-1">Phone.
-                        <span class="color-a">+54 356 945234</span>
+                        <span class="color-a">0927234567654</span>
                       </p>
                     </div>
                   </div>
@@ -164,8 +164,8 @@ $body = "FULLNAME: ".$_POST['fullname']."   ".
                     </div>
                     <div class="icon-box-content">
                       <p class="mb-1">
-                        Manhattan, Nueva York 10036,
-                        <br> EE. UU.
+                        Villa Aznar Urgello St. Cebu City,
+                        <br> Philippines
                       </p>
                     </div>
                   </div>

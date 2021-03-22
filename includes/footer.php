@@ -33,6 +33,7 @@
                   <i class="fa fa-dribbble" aria-hidden="true"></i>
                 </a>
               </li>
+              <p>ajx&#8482;</p>
             </ul>
           </div>
 
